@@ -32,9 +32,9 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>1</td>
-										<td>Javascriptパターン 優れたアプリケーション</td>
+									<tr th:each="library : ${libraries}">
+										<td th:text="${library.id}"></td>
+										<td th:text="${library.name}"></td>
 									</tr>
 									<tr>
 										<td>2</td>
