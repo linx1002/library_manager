@@ -34,7 +34,6 @@ public class LibraryController {
 	public String borrowingForm(@RequestParam("id") Integer id, Model model) {
 		
 		Library library = libraryService.findById(id);
-		
 		model.addAttribute("library",library);
 		return "borrowingForm";
 	}
