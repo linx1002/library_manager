@@ -1,5 +1,7 @@
 package com.example.entity;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,17 +29,25 @@ public class Log {
 	private Integer userId;
 
 	@Column(name = "RENT_DATE")
-	private String rentDate;
+	private LocalDateTime rentDate;
 
 	@Column(name = "RETURN_DATE")
-	private String returnDate;
+	private LocalDateTime returnDate;
 
 	@Column(name = "RETURN_DUE_DATE")
-	private String returnDueDate;
+	private LocalDateTime returnDueDate;
 
 	@ManyToOne
 	@JoinColumn(insertable = false, updatable = false)
 	private Library library;
+
+	public Library getLibrary() {
+		return library;
+	}
+
+	public void setLibrary(Library library) {
+		this.library = library;
+	}
 
 	public Integer getId() {
 		return this.id;
@@ -63,27 +73,27 @@ public class Log {
 		this.userId = userId;
 	}
 
-	public String getRentDate() {
+	public LocalDateTime getRentDate() {
 		return this.rentDate;
 	}
 
-	public void setRentDate(String rentDate) {
+	public void setRentDate(LocalDateTime rentDate) {
 		this.rentDate = rentDate;
 	}
 
-	public String getReturnDate() {
+	public LocalDateTime getReturnDate() {
 		return this.returnDate;
 	}
 
-	public void setReturnDate(String returnDate) {
+	public void setReturnDate(LocalDateTime returnDate) {
 		this.returnDate = returnDate;
 	}
 
-	public String getReturnDueDate() {
+	public LocalDateTime getReturnDueDate() {
 		return this.returnDueDate;
 	}
 
-	public void setReturnDueDate(String returnDueDate) {
+	public void setReturnDueDate(LocalDateTime returnDueDate) {
 		this.returnDueDate = returnDueDate;
 	}
 
