@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org"
-	th:replace="~{layouts/main :: main(~{::title}, ~{::body/content()})}">
+	th:replace="~{library/borrowingForm :: borrowingForm(~{::title}, ~{::body/content()})}">
 
 <head>
 	<title>書籍貸し出し</title>
@@ -25,9 +25,7 @@
 						</div>
 						<div class="content">
 							<form action="/library/borrow" method="post">
-								<div class="book-title">
-									Javascriptパターン　優れたアプリケーションのための作法
-								</div>
+								<div class="book-title"th:text="${library.title}"></div>
 								<hr>
 								<div class="form-group">
 									<label>return date</label>
@@ -35,7 +33,7 @@
 										placeholder="date">
 								</div>
 								<div class="text-center">
-									<input name="id" type="hidden" value="1">
+									<input name="id" type="hidden" th:value="${library.id}">
 									<button class="btn btn-success btn-fill btn-wd" type="submit">borrow!</button>
 								</div>
 								<div class="clearfix"></div>
@@ -46,6 +44,7 @@
 			</div>
 		</div>
 	</div>
+	<a th:href="@{/library}">一覧へ戻る</a>
 </body>
 
 </html>
