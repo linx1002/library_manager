@@ -35,6 +35,6 @@ public class LibraryController {
 		
 		Library library = libraryService.findById(id);
 		model.addAttribute("library",library);
-		return "borrowingForm";
+		return "library/borrowingForm";
 	}
 }
