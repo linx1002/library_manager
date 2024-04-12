@@ -7,5 +7,5 @@ import com.example.entity.Library;
 
 @Repository
 public interface LibraryRepository extends JpaRepository<Library, Integer>{
-
+	
 }

@@ -27,6 +27,11 @@ public class LibraryService {
 		 Optional<Library> libraryOptional = libraryRepository.findById(id);
 		 return libraryOptional.orElse(null);
 	    }
+
+	public void updateLibrary(Library library) {
+		libraryRepository.save(library);
+		
+	}
 	
 	
 }

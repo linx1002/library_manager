@@ -54,4 +54,9 @@ public class LoginUser implements UserDetails{
 	    public boolean isEnabled() {
 	        return true;
 	    }
+
+	public Integer getUserId() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
 }
