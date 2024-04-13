@@ -21,13 +21,14 @@ import com.example.service.LoginUser;
 @Controller
 @RequestMapping("library")
 public class LibraryController {
-
+	
 	private final LibraryService libraryService;
 	private final LogService logService;
 
 	@Autowired
-	public LibraryController(LibraryService libraryService) {
+	public LibraryController(LibraryService libraryService, LogService logService) {
 		this.libraryService = libraryService;
+		this.logService = logService;
 	}
 
 	@GetMapping
@@ -56,7 +57,7 @@ public class LibraryController {
 		
 		Log log = new Log();
 		log.setLibraryId(id);
-		log.setUser(loginUser.getUserId());
+		log.setUserId(loginUser.getUserId());
 		log.setRentDate(LocalDateTime.now());
 		LocalDateTime returnDueDateTime = LocalDateTime.parse(returnDueDate + "T00:00:00");
 		log.setReturnDueDate(returnDueDateTime);
