@@ -21,15 +21,12 @@ import com.example.service.LoginUser;
 @Controller
 @RequestMapping("library")
 public class LibraryController {
-	
-	private final LibraryService libraryService;
-	private final LogService logService;
-
 	@Autowired
-	public LibraryController(LibraryService libraryService, LogService logService) {
-		this.libraryService = libraryService;
-		this.logService = logService;
-	}
+	private  LibraryService libraryService;
+	@Autowired
+	private  LogService logService;
+
+	
 
 	@GetMapping
 	public String index(Model model) {
