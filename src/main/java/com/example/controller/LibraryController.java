@@ -43,7 +43,6 @@ public class LibraryController {
 	}
 	
 	@PostMapping("/borrow")
-	@Autowired
 	public String borrow(@RequestParam("id") Integer id, 
 			@RequestParam("return_due_date") String returnDueDate,
 			@AuthenticationPrincipal LoginUser loginUser) {

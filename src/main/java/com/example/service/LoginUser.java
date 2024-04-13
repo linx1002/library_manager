@@ -56,7 +56,7 @@ public class LoginUser implements UserDetails{
 	    }
 
 	public Integer getUserId() {
-		return null;
+		return this.user.getId();
 	}
 
 
