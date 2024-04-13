@@ -55,8 +55,6 @@ public class LoginUser implements UserDetails{
 	        return true;
 	    }
 
-	public Integer getUserId() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+
+
 }

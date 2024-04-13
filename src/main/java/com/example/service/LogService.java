@@ -18,8 +18,8 @@ public class LogService {
 		this.logRepository = logRepository;
 	}
 	
-	public void addLog(Log log) {
-	    logRepository.save(log);
+	public void addLog(Log logs) {
+	    logRepository.save(logs);
 	}
 	
 	public List<Log> getAllLogs() {

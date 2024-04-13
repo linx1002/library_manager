@@ -42,6 +42,7 @@ public class LibraryController {
 	}
 	
 	@PostMapping("/borrow")
+	@Autowired
 	public String borrow(@RequestParam("id") Integer id, 
 			@RequestParam("return_due_date") String returnDueDate,
 			@AuthenticationPrincipal LoginUser loginUser) {
@@ -57,7 +58,7 @@ public class LibraryController {
 		LocalDateTime returnDueDateTime = LocalDateTime.parse(returnDueDate + "T00:00:00");
 		log.setReturnDueDate(returnDueDateTime);
 		log.setReturnDate(null);
-		logsRepository.save(log);
+		logService.save(log);
 		return "redirect:/library";
 	}
 }
