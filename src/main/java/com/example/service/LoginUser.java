@@ -55,6 +55,10 @@ public class LoginUser implements UserDetails{
 	        return true;
 	    }
 
+	public Integer getUserId() {
+		return null;
+	}
+
 
 
 }

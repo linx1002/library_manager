@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.entity.Library;
+import com.example.entity.Log;
 import com.example.service.LibraryService;
+import com.example.service.LogService;
 import com.example.service.LoginUser;
 
 @Controller
@@ -21,6 +23,7 @@ import com.example.service.LoginUser;
 public class LibraryController {
 
 	private final LibraryService libraryService;
+	private final LogService logService;
 
 	@Autowired
 	public LibraryController(LibraryService libraryService) {
@@ -51,7 +54,7 @@ public class LibraryController {
 		library.setUserId(loginUser.getUserId());
 		libraryService.updateLibrary(library);
 		
-		Logs log = new Logs();
+		Log log = new Log();
 		log.setLibraryId(id);
 		log.setUser(loginUser.getUserId());
 		log.setRentDate(LocalDateTime.now());

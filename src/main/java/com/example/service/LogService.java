@@ -34,4 +34,8 @@ public class LogService {
 	    return logRepository.findByLibraryId(libraryId);
 	}
 
+	public void save(Log log) {
+		 logRepository.save(log);
+	}
+
 }
