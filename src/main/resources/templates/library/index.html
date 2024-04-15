@@ -38,14 +38,14 @@
 										<td>
 											<div th:switch="${library.userId}">
 												//貸出ボタン
-												<form action="/library/borrow" method="get" th:case="0">
+												<form th:action="${/library/borrow}" th:method="get" th:case="0">
 													<input type="hidden" name="id" th:value="${library.id}">
 													<input type="submit" value="borrow" class="btn btn-info">
 												</form>
 												//返却ボタン
-												<form action="/library/return" method="post"
+												<form th:action="${/library/return}" th:method="post"
 													th:case="${library.userId eq loginUser.userId}">
-													<input type="hidden" name="id" th:value="${library.id}">
+													<input type="hidden" name="id" th:value="${#authentication.principal.user.id}">
 													<input type="submit" value="return" class="btn btn-danger">
 												</form>
 												//貸出中ボタン
